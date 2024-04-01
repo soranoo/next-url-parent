@@ -25,27 +25,3 @@ describe("createDirIfNotExists", () => {
     vi.restoreAllMocks()
   });
 });
-
-//! ============================
-//! filePathToDir
-//! ============================
-
-describe("filePathToDir", () => {
-  it("should return the directory path", () => {
-    const filePath = "path/to/file.txt";
-    const expected = "path/to";
-    expect(utils.filePathToDir(filePath, "/")).toEqual(expected);
-  });
-
-  it("should return the directory path for root", () => {
-    const filePath = "/a";
-    const expected = "";
-    expect(utils.filePathToDir(filePath)).toEqual(expected);
-  });
-
-  it("should return the directory path for empty string", () => {
-    const filePath = "";
-    const expected = "";
-    expect(utils.filePathToDir(filePath)).toEqual(expected);
-  });
-});

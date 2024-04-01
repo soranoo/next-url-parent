@@ -1,12 +1,12 @@
 import watcher from "@parcel/watcher";
 import * as fs from "fs";
 import path from "path";
-import { createDirIfNotExists, filePathToDir, log } from "./utils";
+import { createDirIfNotExists, log } from "./utils";
 import { PATHS } from "./constants";
 import yargs from "yargs";
 
 let appDirPath = "./src/app";
-const outputJsonPath = PATHS.DIR_TREE_JSON;
+const outputJsPath = PATHS.DIR_TREE_JS;
 
 // Check if worker directory exists
 if (!fs.existsSync(appDirPath)) {
@@ -14,7 +14,7 @@ if (!fs.existsSync(appDirPath)) {
   process.exit(1);
 }
 
-createDirIfNotExists(filePathToDir(outputJsonPath));
+createDirIfNotExists(path.dirname(outputJsPath));
 
 const watch = () => {
   log.plain(`👀 Watching directory: ${appDirPath}`);
@@ -36,7 +36,7 @@ const generate = () => {
   const relativePaths = filePaths.map(filePath => filePath.replace(new RegExp(regex), ""));
   const tree = JSON.stringify(createDirTree(relativePaths));
   // Save to file
-  fs.writeFileSync(outputJsonPath, tree, "utf-8");
+  generateJsFile(JSON.parse(tree), outputJsPath);
   log.success("Directory tree updated")
 }
 
@@ -89,6 +89,11 @@ export const createDirTree = (filePaths: string[]) => {
   });
 
   return tree;
+}
+
+const generateJsFile = (dirTree: Record<string, any>, filePath: string) => {
+  const content = `export const dirTree = ${JSON.stringify(dirTree)};`;
+  fs.writeFileSync(filePath, content, "utf-8");
 }
 
 //!=============================

@@ -1,13 +1,17 @@
-import fs from "fs";
-import { PATHS } from "./constants";
+import { IMPORT, PATHS } from "./constants";
 
 export * from "./hooks/useUrlParent";
 
-if (!fs.statSync(PATHS.DIR_TREE_JSON).isFile()) {
-  console.error(`⛔ Mssing directory tree file: ${PATHS.DIR_TREE_JSON}`);
+let dirTree = {}
+try {
+  // ({ dirTree } = require(IMPORT.DIR_TREE_JS));
+  //! idk why I can't use the above line, but I can use the below line
+  ({ dirTree } = require("../../../src/__generated__/next-url-parent-dir-tree.mjs"));
+} catch (error) {
+  console.error(`⛔ Mssing directory tree file: ${IMPORT.DIR_TREE_JS}, please run the generate command`);
 }
 
-const routes: Record<string, any> = JSON.parse(fs.readFileSync(PATHS.DIR_TREE_JSON, "utf-8"));
+const routes: Record<string, any> = dirTree;
 
 
 /**

@@ -82,7 +82,7 @@ const MyPage = () => {
   const parentUrl = useUrlParent();
 
   // Default Options
-  const parentUrl = useUrlParent({ 
+  const parentUrl = useUrlParent(options: { 
     keepQueryString = false,
     queryStringWhitelist = [],
     queryStringBlacklist = [],

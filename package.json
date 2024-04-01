@@ -1,6 +1,6 @@
 {
   "name": "next-url-parent",
-  "version": "0.1.4",
+  "version": "0.1.9",
   "description": "A simple package to get the parent URL of the current URL in Next.js APP router.",
   "main": "dist/index.js",
   "type": "commonjs",
@@ -37,8 +37,8 @@
     "yargs": "^17.7.2"
   },
   "peerDependencies": {
-    "react": "^18.2.0",
-    "next": "^14.0.0"
+    "next": "^14.0.0",
+    "react": "^18.2.0"
   },
   "bin": {
     "next-url-parent": "./bin/cli.mjs"

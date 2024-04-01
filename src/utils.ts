@@ -21,16 +21,3 @@ export const createDirIfNotExists = (dir: string) => {
     });
   }
 }
-
-/**
- * Get directory from file path
- * @param filePath the file path
- * @param splitChar the split character
- * @returns the directory
- * 
- * @example
- * filePathToDir("path/to/file.txt") // "path/to"
- */
-export const filePathToDir = (filePath: string, splitChar: string = "\\") => {
-  return filePath.split(splitChar).slice(0, -1).join(splitChar);
-}
