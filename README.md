@@ -43,7 +43,7 @@ Read [💻 CLI](#-cli) for more details.
 
 ### Usage 🎉
 
-> [NOTE]\
+> [!NOTE]\
 > You must run the `next-my-url-parent` command once to get the function and hook working.
 
 #### Function
