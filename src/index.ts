@@ -1,7 +1,7 @@
 import fs from "fs";
 import { PATHS } from "./constants";
 
-export * from "./hooks/useMyUrlParent";
+export * from "./hooks/useUrlParent";
 
 if (!fs.statSync(PATHS.DIR_TREE_JSON).isFile()) {
   console.error(`⛔ Mssing directory tree file: ${PATHS.DIR_TREE_JSON}`);

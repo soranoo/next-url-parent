@@ -1,5 +1,5 @@
 {
-  "name": "next-my-url-parent",
+  "name": "next-url-parent",
   "version": "0.1.0",
   "description": "A simple package to get the parent URL of the current URL in Next.js APP router.",
   "main": "dist/index.js",
@@ -14,14 +14,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/soranoo/next-css-obfuscator.git"
+    "url": "git+https://github.com/soranoo/next-url-parent.git"
   },
   "author": "soranoo (Freeman)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/soranoo/next-css-obfuscator/issues"
+    "url": "https://github.com/soranoo/next-url-parent/issues"
   },
-  "homepage": "https://github.com/soranoo/next-css-obfuscator#readme",
+  "homepage": "https://github.com/soranoo/next-url-parent#readme",
   "devDependencies": {
     "@types/node": "^20.8.10",
     "@types/react": "^18.2.73",
@@ -41,7 +41,7 @@
     "next": "^14.0.0"
   },
   "bin": {
-    "next-my-url-parent": "./bin/cli.mjs"
+    "next-url-parent": "./bin/cli.mjs"
   },
   "keywords": [
     "nextjs",
