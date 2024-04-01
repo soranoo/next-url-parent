@@ -106,8 +106,6 @@ export const cli = () => {
     description: "Watch the app directory for changes",
   }).argv;
 
-  console.log(argv);
-
   // @ts-ignore
   if (argv.appDir) {
     // @ts-ignore
@@ -116,6 +114,7 @@ export const cli = () => {
 
   // @ts-ignore
   if (argv.watch) {
+    generate();
     watch();
   } else {
     generate();

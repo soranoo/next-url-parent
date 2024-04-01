@@ -1,6 +1,6 @@
 {
   "name": "next-url-parent",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A simple package to get the parent URL of the current URL in Next.js APP router.",
   "main": "dist/index.js",
   "type": "commonjs",
