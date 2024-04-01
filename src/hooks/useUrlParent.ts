@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { getParentUrl } from "../index";
 import { usePathname, useSearchParams } from "next/navigation";
 
-type useMyUrlParentType = ({
+type useUrlParentType = ({
   keepQueryString,
   queryStringWhitelist,
   queryStringBlacklist,
@@ -14,7 +14,7 @@ type useMyUrlParentType = ({
   defaultParentUrl?: string;
 }) => string;
 
-export const useMyUrlParent: useMyUrlParentType = ({
+export const useMyUrlParent: useUrlParentType = ({
   keepQueryString = false,
   queryStringWhitelist,
   queryStringBlacklist,

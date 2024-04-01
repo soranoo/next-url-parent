@@ -37,7 +37,7 @@ const generate = () => {
   const tree = JSON.stringify(createDirTree(relativePaths));
   // Save to file
   fs.writeFileSync(outputJsonPath, tree, "utf-8");
-  log.success("✅ Directory tree updated")
+  log.success("Directory tree updated")
 }
 
 //!=============================
