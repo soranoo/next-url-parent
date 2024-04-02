@@ -67,6 +67,10 @@ export const getParentUrl = (
     }
   }
 
+  if (!parentUrl) {
+    parentUrl = "/";
+  }
+
   return parentUrl + queryString;
 }
 // Example routes object
